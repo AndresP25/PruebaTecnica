@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOGIN</title>
+  
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script> 
+  <script src="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.css" />
+  
+  <link rel="stylesheet" href="/src/styles/normalize.css">
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./src/styles/EstiloInicio-dist.css">
+  
+  <script src="/src/js/Login.js"></script>
+
+</head> 
+
+<body>
+  
+  <header class = "header">
+    <nav> Sistema de gestión de proyectos </nav>
+  </header>
+  
+  <div class="card">
+
+    <div class="card-header">INGRESAR</div>
+
+    <div class="card-body">
+
+      <form id="Login-form">
+
+        <div class = "Container">
+          <input type="text" id="name" class="input-form" placeholder="Nombre de usuario" 
+          title="Introduzca la Contraseña" required autofocus onkeyup="controlEspacio(this)">
+        </div>
+
+        <div class = "Container">
+          <input type="password" id="password" class="input-form" placeholder="Contraseña" 
+          title="Introduzca la Contraseña" required  >
+        </div>
+
+        <div class = "Container">
+          <select class = "Select" name="company" id="company" title="Escoja su compañia" required> 
+            <option value="">---- Compañías ----</option>
+            <option value="TeleVolt">TeleVolt</option>
+            <option value="EcoDynamics">EcoDynamics</option>
+            <option value="InMotion">InMotion</option>
+          </select>
+        </div>
+
+        <div class = "Container">
+          <input type="button" class="button" id="IniciarSesion" 
+          value= "Iniciar Sesión">
+  
+        </div>
+
+      </form>    
+    </div>
+    
+    <div class="card-footer">
+      <input type="button" class="button" value="Registrar Usuario" 
+      onclick="location.href='/src/html/Registrar.html'">
+    </div>
+
+  </div>
+  
+  <footer class = "footer">
+
+    <address class = "address">
+      Nuestra oficina<br>
+      Bogotá, Colombia<br>
+      Cra 45A #127-76<br>
+    </address>  
+    <address class = "address">
+      Contacto<br>
+      Tel. +571 927 80 35<br>
+      hola@fusepong.com<br>
+    </address>  
+    <img src="/assets/Images/Logo.svg" alt="Logo" class="Img">
+
+  </footer>
+
+  <script type="module">
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
+    import {getFirestore, collection, query, where, getDocs} from "https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore.js";
+    
+    // getFirestore, collection, query, where, getDocs, doc, getDocs, setDoc, collection, addDoc, updateDoc, deleteDoc, deleteField
+    
+    const firebaseConfig = {
+      apiKey: "AIzaSyDG0s-fcPRiDyfPJ1NpaXHiAuQWzOGYYVI",
+      authDomain: "prueba-tecnica-13433.firebaseapp.com",
+      databaseURL: "https://prueba-tecnica-13433-default-rtdb.firebaseio.com",
+      projectId: "prueba-tecnica-13433",
+      storageBucket: "prueba-tecnica-13433.appspot.com",
+      messagingSenderId: "1052395441910",
+      appId: "1:1052395441910:web:e82773157a30f4cb0766d7"
+
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);  
+    
+    var IniciarSesionBtn = document.getElementById('IniciarSesion');    
+
+    async function InSes(){
+      
+      var name = document.getElementById('name').value;
+      var password = document.getElementById('password').value;
+      var company = document.getElementById('company').value;   
+
+      const q = query(collection(db, "Users"),
+
+        where("name", "==", name),
+        where("password", "==", password), 
+        where("company", "==", company)
+
+      );
+
+      // console.log(q);
+      
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        //doc.data() is never undefined for query doc snapshots
+        // console.log(doc.id, " => ", doc.data());
+        //console.log(doc.data().name,doc.data().password,doc.data().company);
+
+        var UserActive = [ doc.data().name,doc.data().company,doc.data().Proyecto];
+        localStorage.setItem( 'objectToPass', UserActive );
+        InicioExitoso()
+
+      });
+      
+    };
+
+    IniciarSesionBtn.addEventListener("click",InSes);
+
+  </script>
+
+</body>
+</html>

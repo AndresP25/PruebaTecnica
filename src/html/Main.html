@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRINCIPAL</title>
+
+  <link rel="stylesheet" href="/src/styles/normalize.css">
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/src/styles/EstiloMain-dist.css">
+
+</head> 
+
+<body >
+
+    <header class = "header">
+        <nav> 
+            <div class="Container ">
+                <div class="Container left">
+                    <select class = "button" name="company" id="company" title="¿Quiere visitar otra compañia?"> 
+                        <option value="TeleVolt">TeleVolt</option>
+                        <option value="EcoDynamics">EcoDynamics</option>
+                        <option value="InMotion">InMotion</option>
+                    </select>
+                </div>
+                <div class="Container title">
+                    <label class = "label title">Sistema de gestion de proyectos</label>
+                </div>
+                <div class = "Container right">
+                    <select class = "button" name="Proyect" id="Proyect" title="¿Quiere visitar otro proyecto?"> 
+                        
+                    </select>
+                    
+                    
+                    
+                </div>            
+            </div>
+            <div class="Container ">
+                <table class="navbar">
+                    <tr>
+                        <td>
+                            <div class="ContainerDatos">
+                                <label class = "label">Usuario: </label>
+                                <label id = "USAct" class = "label"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="ContainerDatos">
+                                <label class = "label">Compañía: </label>
+                                <label id = "Comp" class = "label"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="ContainerDatos">
+                                <label class = "label">Proyecto: </label>
+                                <label id = "Proyecto" class = "label"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="ContainerDatos">
+                                <label class = "label">Dirección: </label>
+                                <label id = "Dirección" class = "label"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="ContainerDatos">
+                                <label class = "label">Email: </label>
+                                <label id = "Email" class = "label"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="ContainerDatos">
+                                <label class = "label">Teléfono: </label>
+                                <label id = "Telefono" class = "label"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="ContainerDatos">
+                                <label class = "label">NIT: </label>
+                                <label id = "NIT" class = "label"></label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>  
+            </div>
+        </nav>
+    </header>
+
+    <div id = "ContProyects" class="body"></div>
+
+    <footer class = "footer">
+        <address class = "address">
+          Nuestra oficina<br>
+          Bogotá, Colombia<br>
+          Cra 45A #127-76<br>
+        </address>  
+        <address class = "address">
+          Contacto<br>
+          Tel. +571 927 80 35<br>
+          hola@fusepong.com<br>
+        </address>  
+        <input type="button" class="button" id="Salir" 
+        value= "Cerrar Sesión" onclick="location.href='/index.html'">
+        <img src="/assets/Images/Logo.svg" alt="Logo" class="Img">
+    </footer>
+
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
+        import {getFirestore, collection, query, where, getDocs} from "https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore.js";
+
+        // getFirestore, collection, query, where, getDocs, doc, getDocs, setDoc, collection, addDoc, updateDoc, deleteDoc, deleteField
+
+        const firebaseConfig = {
+          apiKey: "AIzaSyDG0s-fcPRiDyfPJ1NpaXHiAuQWzOGYYVI",
+          authDomain: "prueba-tecnica-13433.firebaseapp.com",
+          databaseURL: "https://prueba-tecnica-13433-default-rtdb.firebaseio.com",
+          projectId: "prueba-tecnica-13433",
+          storageBucket: "prueba-tecnica-13433.appspot.com",
+          messagingSenderId: "1052395441910",
+          appId: "1:1052395441910:web:e82773157a30f4cb0766d7"
+        };
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);  
+
+        var UserActive = localStorage['objectToPass'];
+        // console.log(UserActive)
+        const UsAct=UserActive.split(','); 
+        var name = UsAct[0];
+        var company = UsAct[1];
+        var proyecto = UsAct[2];
+
+        document.getElementById('USAct').innerHTML = name;
+        document.getElementById('Comp').innerHTML = company;
+        document.getElementById('Proyecto').innerHTML = proyecto;
+
+        const ContComp = document.getElementById("container-proyecto");       
+
+        var EscogerProyecto = document.getElementById('Proyect');
+
+
+        async function ProyectosSelec(){
+    
+            const docRef = await getDocs(collection(db, company));
+            docRef.forEach((doc) => {
+
+                var opt = document.createElement('option');
+                opt.value = doc.data().Name;
+                opt.innerHTML = doc.data().Name;
+                EscogerProyecto.appendChild(opt);
+                                
+            });
+            
+            
+        };
+        async function ProyectosDIV(){
+            
+            
+            const r = query(collection(db, "Users"),where("Proyecto", "==", proyecto))
+
+            const querySnapshot = await getDocs(r);
+            querySnapshot.forEach((doc) => {
+            
+            
+                const newDiv = document.createElement("div");
+                newDiv.classList.add("container-proyectos");
+                document.body.appendChild(newDiv);
+
+                const newDiv2 = document.createElement("div");
+                newDiv2.classList.add("header_div");
+                newDiv.appendChild(newDiv2);
+
+                const newlbl = document.createElement('label');
+                newlbl.textContent="Historia de: "+doc.data().name;
+                newlbl.classList.add("lbl_title");
+                newDiv2.appendChild(newlbl)
+
+                async function Ticket(){
+                    const t = await getDocs(collection(db, doc.data().name))
+                    t.forEach((doc) => {
+                        console.log(newDiv)
+
+                        const newDiv3 = document.createElement("div");
+                        newDiv3.classList.add("container-ticket");
+                        newDiv.appendChild(newDiv3);
+
+                        const newlbl2 = document.createElement('label');
+                        newlbl2.textContent="Ticket: ";
+                        newlbl2.classList.add("lbl_title_ticket");
+                        newDiv3.appendChild(newlbl2)
+
+                        const newlbl3 = document.createElement('label');
+                        newlbl3.textContent=doc.data().Ticket;
+                        newlbl3.classList.add("lbl_title_ticket");
+                        newDiv3.appendChild(newlbl3)
+
+                    });
+                }
+                Ticket()
+
+            });
+        }
+        window.addEventListener('DOMContentLoaded',async (e) =>{
+            const q = query(collection(db, "Empresas"), 
+                where("Nombre", "==", company)
+            );
+            const querySnapshot = await getDocs(q);
+            querySnapshot.forEach((doc) => {
+                document.getElementById('Dirección').innerHTML = doc.data().Direccion;
+                document.getElementById('Email').innerHTML = doc.data().Correo;
+                document.getElementById('Telefono').innerHTML = doc.data().Telefono;
+                document.getElementById('NIT').innerHTML = doc.data().NIT;
+                
+            })
+            function selectElement(id, valueToSelect) {    
+                let element = document.getElementById(id);
+                element.value = valueToSelect;
+            }
+            ProyectosSelec()
+            selectElement("company", company)
+            function selectProy(id, valueToSelect) {    
+                let element = document.getElementById(id);
+                element.value = valueToSelect;
+            }
+            selectProy("Proyect", proyecto)
+             
+// console.log(document.getElementById("Proyect").value)
+            ProyectosDIV()
+        })
+    </script>
+
+</body>

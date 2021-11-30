@@ -1,0 +1,90 @@
+[debug] [2021-11-30T22:49:14.583Z] ----------------------------------------------------------------------
+[debug] [2021-11-30T22:49:14.586Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-11-30T22:49:14.587Z] CLI Version:   9.23.0
+[debug] [2021-11-30T22:49:14.587Z] Platform:      win32
+[debug] [2021-11-30T22:49:14.587Z] Node Version:  v17.1.0
+[debug] [2021-11-30T22:49:14.588Z] Time:          Tue Nov 30 2021 17:49:14 GMT-0500 (hora estándar de Colombia)
+[debug] [2021-11-30T22:49:14.589Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-11-30T22:49:14.655Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-11-30T22:49:14.656Z] > authorizing via signed-in user (andres.parra0506@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\ANDRES PARRA\TRABAJOS\FUSEPONG
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  .firebaserc already has a default project, using prueba-tecnica-13433. 
+[debug] [2021-11-30T22:49:30.281Z] > refreshing access token with scopes: []
+[debug] [2021-11-30T22:49:30.281Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-30T22:49:30.673Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","date":"Tue, 30 Nov 2021 22:49:30 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-30T22:49:30.685Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/prueba-tecnica-13433 [none]
+[debug] [2021-11-30T22:49:31.167Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/prueba-tecnica-13433 200
+[debug] [2021-11-30T22:49:31.167Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/prueba-tecnica-13433 {"projectId":"prueba-tecnica-13433","projectNumber":"1052395441910","displayName":"Prueba-Tecnica","name":"projects/prueba-tecnica-13433","resources":{"hostingSite":"prueba-tecnica-13433","realtimeDatabaseInstance":"prueba-tecnica-13433-default-rtdb","storageBucket":"prueba-tecnica-13433.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[info] 
+=== Firestore Setup
+[debug] [2021-11-30T22:49:31.169Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-11-30T22:49:31.169Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-30T22:49:31.388Z] <<< HTTP RESPONSE 200 {"date":"Tue, 30 Nov 2021 22:49:31 GMT","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-30T22:49:31.396Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/prueba-tecnica-13433/services/firestore.googleapis.com  
+ 
+[debug] [2021-11-30T22:49:32.261Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 30 Nov 2021 22:49:32 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-30T22:49:32.262Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/prueba-tecnica-13433  
+ 
+[debug] [2021-11-30T22:49:33.017Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 30 Nov 2021 22:49:33 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-30T22:49:33.017Z] database_type: CLOUD_FIRESTORE
+[debug] [2021-11-30T22:49:33.018Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-11-30T22:49:33.018Z] > authorizing via signed-in user (andres.parra0506@gmail.com)
+[debug] [2021-11-30T22:49:33.018Z] [iam] checking project prueba-tecnica-13433 for permissions ["firebase.projects.get"]
+[debug] [2021-11-30T22:49:33.018Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/prueba-tecnica-13433:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-11-30T22:49:33.540Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 30 Nov 2021 22:49:33 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=319","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2021-11-30T22:49:37.594Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/prueba-tecnica-13433/releases?pageSize=10&pageToken=  
+ 
+[debug] [2021-11-30T22:49:38.068Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 30 Nov 2021 22:49:38 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-30T22:49:38.069Z] Found ruleset: projects/prueba-tecnica-13433/rulesets/b69ec4fc-5fed-4545-81bf-8c80d02ea581
+[debug] [2021-11-30T22:49:38.069Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/prueba-tecnica-13433/rulesets/b69ec4fc-5fed-4545-81bf-8c80d02ea581  
+ 
+[debug] [2021-11-30T22:49:38.436Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 30 Nov 2021 22:49:38 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2021-11-30T22:49:42.653Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1/projects/prueba-tecnica-13433/databases/(default)/collectionGroups/-/indexes  
+ 
+[debug] [2021-11-30T22:49:42.653Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1/projects/prueba-tecnica-13433/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false  
+ 
+[debug] [2021-11-30T22:49:43.273Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 30 Nov 2021 22:49:43 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-30T22:49:43.462Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 30 Nov 2021 22:49:43 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 

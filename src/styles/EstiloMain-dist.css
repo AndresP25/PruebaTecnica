@@ -1,0 +1,155 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+body{
+    margin:0;
+    background-color: #dadbdb;
+}
+
+.header{
+    background-color:#515963;
+    color:#fff;
+    text-align: center;
+    font-size: 1vw;
+    font-family: 'Monserrat',sans-serif;
+    
+    -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.35);
+    position: fixed;
+    width: 100%;
+}
+.body{
+    padding-top: 17vw;
+    /* padding-bottom:10vw; */
+}
+.label{
+    display: block;
+    font-size: 1.3vw;
+}
+.left{
+    top: 2%;
+    left: 2%;
+    position: fixed;
+    
+}
+.right{
+    position: fixed; 
+    top: 2%;
+    right:2%;
+}
+.title{
+    font-size:5vw;
+    font-family: 'Bebas Neue';
+}
+
+.Container{
+    padding: 0.5vmin;
+ 
+}
+.ContainerDatos{
+    padding-left:  2vw;
+    padding-right: 2vw;
+}
+.button{
+    
+    background-color: #697179;
+    border: 2px solid #000000;
+    border-radius:0.6rem;
+    color: white;
+    font-family: Arial;
+    padding: 0.5vw 1vw;
+    font-size:1.5vw;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+
+}
+
+.button:hover {
+    background-color: #515963;
+}
+
+.footer{
+    margin-top: 20vw;
+    background-color:#515963;
+    width:100vw;
+    position: fixed;
+    bottom: 0;
+    color: white;
+    min-height: 20px;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+}
+
+.navbar{
+    margin: 0 auto;
+}
+.Img{
+    width: 18vmin;
+    height:6.5vmin;
+    min-width:32px;
+    min-height:9px;
+    margin-left:auto;
+    
+}
+
+.address{
+    display:inline;
+    font-size:1vw;
+    padding-left: 1vw;
+    padding-right:1vw;
+
+}
+
+.container-proyectos{
+    width:80vw;
+    height:40vw;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+    background-color: #fff;
+    border-radius: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 8vw;
+    border-radius: 1rem;
+    overflow:hidden;
+
+}
+
+.header_div{
+    width:100%;
+    text-align: center;
+    font-size:5vw;
+    font-family: 'Bebas Neue';
+    padding:1%;
+    padding-top: 1.2%;
+    background-color: #64dde6;
+    border-bottom: 2px solid rgba(187, 183, 177, 0.75);
+
+}
+.container-ticket    {
+    margin-top: 2%;
+    width:60vw;
+    height: 3vw;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+    background-color: #dadbdbbb;
+    border-radius: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    
+    border-radius: 1rem;
+    overflow:hidden;
+    padding: 2%;
+    font-size: 3vw;
+    font-family: 'Monserrat',sans-serif;
+    text-align: center;
+
+}
